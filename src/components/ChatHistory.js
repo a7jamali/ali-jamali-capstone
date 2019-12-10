@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-class ChatHistory extends React.Component {
+export default class ChatHistory extends React.Component {
   static propTypes = {
     history: React.PropTypes.array,
     fetchHistory: React.PropTypes.func,
@@ -55,7 +55,7 @@ class ChatHistory extends React.Component {
                 <h3 className="chat__date">{ messageDateTime }</h3>
                 </div>
                 <div className="chat__overlay">
-                <h3 className="chat__overlay-text">hidden</h3>
+                {/* <h3 className="chat__overlay-text">hidden</h3> */}
                 </div>
             </li>
           );
@@ -74,5 +74,3 @@ class ChatHistory extends React.Component {
     ReactDOM.findDOMNode(messageList).scrollTop = maxScrollTop > 0 ? maxScrollTop : 0;
   }
 }
-
-export default ChatHistory;

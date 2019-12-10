@@ -10,19 +10,12 @@ export default function promiseMiddleware({ dispatch }) {
     const { promise, data } = payload;
     const [ PENDING, FULFILLED, REJECTED ] = types;
 
-   /**
-    * Dispatch the pending action
-    */
     dispatch({
       type: PENDING,
       ...data && { payload: data },
       ...meta && { meta },
     });
 
-    /**
-     * If successful, dispatch the fulfilled action, otherwise dispatch
-     * rejected action.
-     */
     return promise.then(
       result => {
         dispatch({

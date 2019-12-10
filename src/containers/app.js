@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import ChatInput from '../components/ChatInput';
 import ChatHistory from '../components/ChatHistory';
 import { setCurrentUserID, addMessage, addHistory } from '../actions';
+import Header from '../components/Header';
+
 
 function mapStateToProps(state) {
   return {
@@ -34,8 +36,8 @@ class App extends React.Component {
     const ID = Math.round(Math.random(0) * 7);
     this.props.setUserID(ID);
     this.PubNub = PUBNUB.init({
-      publish_key: 'pub-c-dbf851a3-4c3d-44ad-a1cd-ba7e1ce2ba3d',
-      subscribe_key: 'sub-c-ac59f6c0-1b18-11ea-b79a-866798696d74',
+      publish_key: 'pub-c-4fb411d1-3276-47b3-92e7-6578417a930a',
+      subscribe_key: 'sub-c-f36ef060-123a-11ea-a365-4a09dafe54f0',
       ssl: (location.protocol.toLowerCase() === 'https:'),
     });
     this.PubNub.subscribe({
@@ -49,6 +51,7 @@ class App extends React.Component {
     const { props, sendMessage, fetchHistory } = this;
     return (
       <div className="chat__app">
+        <Header/>
         <ChatHistory history={ props.history } fetchHistory={ fetchHistory } />
         <ChatInput userID={ props.userID } sendMessage={ sendMessage } />
       </div>

@@ -1,6 +1,7 @@
 import * as React from 'react';
 
-class ChatInput extends React.Component {
+
+export default class ChatInput extends React.Component {
   static propTypes = {
     userID: React.PropTypes.number,
     sendMessage: React.PropTypes.func,
@@ -51,5 +52,3 @@ class ChatInput extends React.Component {
     );
   }
 }
-
-export default ChatInput;

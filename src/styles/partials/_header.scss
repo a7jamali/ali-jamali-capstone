@@ -1,0 +1,31 @@
+@import "./breakpoint";
+
+
+.header {
+    
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+
+
+    &__logo {
+        width: 30vw;
+        margin-bottom: 25px;
+    }
+
+}
+
+@include huge {
+    .header {
+    
+        justify-content: flex-start;
+    
+        &__logo {
+            width: 10vw;
+            margin-bottom: 25px;
+            margin-left: -21vw;
+            position: fixed;
+        }
+    
+    }
+}

@@ -21,7 +21,9 @@
         background: rgb(10, 9, 9);
 
         &:hover {
-            filter: blur(1px);
+            filter: blur(2px);
+            // background: $cream;
+            // opacity: 40%;
 
         }
 
@@ -49,7 +51,7 @@
         font-size: 0.6rem;
     }
 
-    &__overlay {
+    /*&__overlay {
         position: absolute;
         display: flex;
         justify-content: center;
@@ -71,7 +73,7 @@
             background: black;
 
         }
-    }
+    }*/
 }
 
 @include medium {
@@ -86,7 +88,7 @@
 @include huge {
     .chat {
         &__app {
-            padding: 5vh 30vw;
+            padding: 5vh 5vw 5vh 30vw;
 
         }
     }

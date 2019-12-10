@@ -3,6 +3,32 @@
 /* media query for mobile */
 /* media query for tablet */
 /* media query for high pixel density desktops */
+.chat {
+  /*&__overlay {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+
+        &-text {
+            font-weight: 900;
+            font-size: 2rem;
+        }
+
+
+        &:hover {
+            opacity: 90%;
+            background: black;
+
+        }
+    }*/
+}
+
 .chat__app {
   padding: 5vh 2.5vw;
 }
@@ -20,8 +46,8 @@
 }
 
 .chat__cell:hover {
-  -webkit-filter: blur(1px);
-          filter: blur(1px);
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
 }
 
 .chat__info {
@@ -54,34 +80,6 @@
   font-size: 0.6rem;
 }
 
-.chat__overlay {
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-}
-
-.chat__overlay-text {
-  font-weight: 900;
-  font-size: 2rem;
-}
-
-.chat__overlay:hover {
-  opacity: 90%;
-  background: black;
-}
-
 @media only screen and (min-width: 768px) {
   .chat__app {
     padding: 5vh 15vw;
@@ -90,7 +88,7 @@
 
 @media only screen and (min-width: 1440px) {
   .chat__app {
-    padding: 5vh 30vw;
+    padding: 5vh 5vw 5vh 30vw;
   }
 }
 
@@ -110,19 +108,19 @@
 
 .input__user {
   font-weight: 200;
-  font-size: 1rem;
+  font-size: 0.8rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 10%;
+  width: 20%;
 }
 
 .input__text {
   height: 30px;
-  width: 90%;
+  width: 80%;
   margin-left: auto;
   padding-left: 5px;
   border: none;
@@ -130,7 +128,7 @@
 
 .input__text:focus {
   outline: none;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .input__button {
@@ -173,6 +171,41 @@
 /* media query for mobile */
 /* media query for tablet */
 /* media query for high pixel density desktops */
+/* media query for mobile */
+/* media query for tablet */
+/* media query for high pixel density desktops */
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header__logo {
+  width: 30vw;
+  margin-bottom: 25px;
+}
+
+@media only screen and (min-width: 1440px) {
+  .header {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .header__logo {
+    width: 10vw;
+    margin-bottom: 25px;
+    margin-left: -21vw;
+    position: fixed;
+  }
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
