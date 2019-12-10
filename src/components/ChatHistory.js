@@ -7,6 +7,10 @@ export default class ChatHistory extends React.Component {
     fetchHistory: React.PropTypes.func,
   };
 
+  state = {
+    visible: false,
+  };
+
   componentWillUpdate(nextProps) {
     this.historyChanged = nextProps.history.length !== this.props.history.length;
     if (this.historyChanged) {
@@ -32,6 +36,13 @@ export default class ChatHistory extends React.Component {
     }
   }
 
+  onClick = () => {
+    this.setState({
+      visible: !this.state.visible,
+    });
+  };
+
+
   onScroll = () => {
     const { refs, props } = this;
     const scrollTop = refs.messageList.scrollTop;
@@ -41,6 +52,7 @@ export default class ChatHistory extends React.Component {
   };
 
   render() {
+    const something = this.state.visible === true ? 'visible' : 'invisible';
     const { props, onScroll } = this;
     return (
       <ul className="chat__room" ref="messageList" onScroll={ onScroll }>
@@ -54,8 +66,8 @@ export default class ChatHistory extends React.Component {
                 <h3 className="chat__name">Client No. { messageObj.Who }</h3>
                 <h3 className="chat__date">{ messageDateTime }</h3>
                 </div>
-                <div className="chat__overlay">
-                {/* <h3 className="chat__overlay-text">hidden</h3> */}
+                <div className={something} onClick={this.onClick}>
+                <h3 className="blurry-boi">blurry boi No. { messageObj.Who }</h3>
                 </div>
             </li>
           );

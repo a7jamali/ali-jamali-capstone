@@ -4,6 +4,7 @@ import ChatInput from '../components/ChatInput';
 import ChatHistory from '../components/ChatHistory';
 import { setCurrentUserID, addMessage, addHistory } from '../actions';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 
 function mapStateToProps(state) {
@@ -53,7 +54,8 @@ class App extends React.Component {
       <div className="chat__app">
         <Header/>
         <ChatHistory history={ props.history } fetchHistory={ fetchHistory } />
-        <ChatInput userID={ props.userID } sendMessage={ sendMessage } />
+        <ChatInput userID={ props.userID } sendMessage={ sendMessage }/>
+        <Footer/>
       </div>
     );
   }
@@ -65,8 +67,6 @@ class App extends React.Component {
       count: 15,
       start: props.lastMessageTimestamp,
       callback: (data) => {
-        // data is Array(3), where index 0 is an array of messages
-        // and index 1 and 2 are start and end dates of the messages
         props.addHistory(data[0], data[1]);
       },
     });

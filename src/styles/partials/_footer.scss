@@ -1,0 +1,38 @@
+@import "./breakpoint";
+
+
+.footer {
+    
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+
+
+    &__logo {
+        opacity: 1;
+        width: 24vw;
+        margin-top: 32px;
+    }
+
+}
+
+@include huge {
+    .footer {
+    
+
+
+            justify-content: flex-start;
+        
+        
+            &__logo {
+                opacity: 1;
+                width: 5vw;
+                margin-top: 32px;
+                
+            }
+        
+        
+        
+    
+    }
+}
