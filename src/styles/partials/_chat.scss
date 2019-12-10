@@ -1,0 +1,93 @@
+@import "./colors";
+@import "./fonts";
+@import "./breakpoint";
+
+.chat {
+    &__app {
+        padding: 5vh 2.5vw;
+
+
+    }
+
+    &__room {
+        background: $cream;
+        padding: 10px;
+    }
+
+    &__cell {
+        position: relative;
+        margin: 5px 0;
+        padding: 10px 5px;
+        background: rgb(10, 9, 9);
+
+        &:hover {
+            filter: blur(1px);
+
+        }
+
+    }
+
+    &__info {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    &__message {
+        padding: 5px 0 7.5px 0;
+    }
+
+    &__name {
+        font-weight: 200;
+        font-size: 0.8rem;
+
+    }
+
+    &__date {
+        font-weight: 100;
+        font-size: 0.6rem;
+    }
+
+    &__overlay {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+
+        &-text {
+            font-weight: 900;
+            font-size: 2rem;
+        }
+
+
+        &:hover {
+            opacity: 90%;
+            background: black;
+
+        }
+    }
+}
+
+@include medium {
+    .chat {
+        &__app {
+            padding: 5vh 15vw;
+
+        }
+    }
+}
+
+@include huge {
+    .chat {
+        &__app {
+            padding: 5vh 30vw;
+
+        }
+    }
+}

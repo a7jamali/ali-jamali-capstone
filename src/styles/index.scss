@@ -1,0 +1,23 @@
+@import "./partials/fonts";
+@import "./partials/chat";
+@import "./partials/colors";
+@import "./partials/input";
+@import "./partials/breakpoint";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: Raleway;
+}
+
+body {
+    background: $agnostos;
+
+}
+
+h3 {
+    color: $cream;
+}
+
